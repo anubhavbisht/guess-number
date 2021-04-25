@@ -18,7 +18,11 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (guess === secret) {
     document.querySelector(".message").textContent = "🎉 Correct Number!";
     document.querySelector("body").style.backgroundColor = "blue";
-    document.querySelector(".highscore").textContent = score;
+    var x = Number(document.querySelector(".highscore").textContent);
+    if (score > x) {
+      document.querySelector(".highscore").textContent = score;
+    }
+
     document.querySelector(".number").style.padding = "3rem 15rem";
   } else if (guess > secret) {
     if (score > 1) {
